@@ -50,3 +50,13 @@ RPS = dau * avg_requests_per_day_by_user / 86 400 = 10 000 000 * 2 / 86 400 = 23
 Traffic = rps * avg_request_size = 232 * 0.75 КБ = 174 КБ/с
 
 Connections = 10 000 000 * 0.1 = 1 000 000
+
+## Расчет дисков
+
+Сколько потребуется дисков для хранения и обработки всех данных приложения на 1 год
+
+Сapacity = 0,25 МБ/с * 86 400 * 365 = 8 ТБ
+Disks_for_capacity = 8 ТБ / 2 ТБ = 4
+Disks_for_throughput = 254 МБ/с / 100 МБ/с = 2.5
+Disks_for_iops = 300 / 100 = 3
+Disks = max(ceil(4), ceil(2.5), ceil(3)) = 4
